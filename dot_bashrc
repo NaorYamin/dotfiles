@@ -1,0 +1,48 @@
+# .bashrc
+
+#tmux alias
+alias t="tmux"
+
+#tailscale alias
+alias ts="sudo tailscale"
+
+#kubectl alias
+alias k="kubectl" 
+
+#terraform alias
+alias tf="terraform" 
+
+#git commit alias
+alias gc="git commit"
+
+#git push alias
+alias gp="gp"
+
+#git status alias 
+alias gs="git status" 
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+eval "$(starship init bash)"
