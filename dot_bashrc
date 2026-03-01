@@ -13,10 +13,13 @@ alias k="kubectl"
 alias tf="terraform" 
 
 #git commit alias
-alias gc="git commit"
+alias gc="git commit -m"
+
+#git add alias
+alias ga="git add" 
 
 #git push alias
-alias gp="gp"
+alias gp="git push"
 
 #git status alias 
 alias gs="git status" 
