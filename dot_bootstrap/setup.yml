@@ -19,6 +19,7 @@
           - luarocks
           - fd-find
           - unar
+          - starship
         state: present
 
     - name: Add kubectl repo
@@ -27,6 +28,15 @@
         description: Kubernetes repo
         baseurl: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/
         gpgkey: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/repodata/repomd.xml.key
+        gpgcheck: true
+        enabled: true
+    
+    - name: Add Hashicorp Repo
+      ansible.builtin.yum_repository:
+        name: hashicorp
+        description: Hashicorp repo
+        baseurl: "https://rpm.releases.hashicorp.com/fedora/$releasever/$basearch/stable"
+        gpgkey: https://rpm.releases.hashicorp.com/gpg
         gpgcheck: true
         enabled: true
 
