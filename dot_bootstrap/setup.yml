@@ -10,16 +10,21 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
+    - name: Add Starship COPR repo
+      ansible.builtin.command: dnf copr enable -y atim/starship
+      args:
+        creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:atim:starship.repo
+
     - name: Install CLI packages inside Toolbox
       ansible.builtin.dnf:
         name:
+          - starship
           - gh
           - helm
           - tmux
           - luarocks
           - fd-find
           - unar
-          - starship
         state: present
 
     - name: Add kubectl repo
@@ -30,7 +35,7 @@
         gpgkey: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/repodata/repomd.xml.key
         gpgcheck: true
         enabled: true
-    
+
     - name: Add Hashicorp Repo
       ansible.builtin.yum_repository:
         name: hashicorp
