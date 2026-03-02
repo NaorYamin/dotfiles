@@ -59,5 +59,3 @@
         state: present
         remote: flathub
         method: user
-
-toolbox run -c ansible-control ansible-playbook "$HOME/.bootstrap/setup.yml" --ask-become-pass
