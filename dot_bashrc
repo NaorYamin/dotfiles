@@ -1,10 +1,9 @@
 # .bashrc
 
 alias k='toolbox run -c ansible-control kubectl'
-alias t='toolbox run -c ansible-control terraform'
+alias tf='toolbox run -c ansible-control terraform'
 alias gh='toolbox run -c ansible-control gh'
 alias h='toolbox run -c ansible-control helm'
-alias t='toolbox run -c ansible-control tmux'
 alias l='toolbox run -c ansible-control luarocks'
 alias fd='toolbox run -c ansible-control fd'
 alias unar='toolbox run -c ansible-control unar'
