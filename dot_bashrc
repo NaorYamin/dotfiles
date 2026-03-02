@@ -1,16 +1,16 @@
 # .bashrc
 
+alias k='toolbox run -c ansible-control kubectl'
+alias t='toolbox run -c ansible-control terraform'
+
+# General helper to run ANY command inside your dev toolbox
+alias tb='toolbox run -c ansible-control'
+
 #tmux alias
 alias t="tmux"
 
 #tailscale alias
 alias ts="sudo tailscale"
-
-#kubectl alias
-alias k="kubectl" 
-
-#terraform alias
-alias tf="terraform" 
 
 #git commit alias
 alias gc="git commit -m"

@@ -1,0 +1,51 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+
+  tasks:
+    - name: Get my user
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+    - name: Install CLI packages inside Toolbox
+      ansible.builtin.dnf:
+        name:
+          - gh
+          - helm
+          - tmux
+          - luarocks
+          - fd-find
+          - unar
+        state: present
+
+    - name: Add kubectl repo
+      ansible.builtin.yum_repository:
+        name: Kubernetes
+        description: Kubernetes repo
+        baseurl: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/
+        gpgkey: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/repodata/repomd.xml.key
+        gpgcheck: true
+        enabled: true
+
+    - name: Install kubectl and Terraform
+      ansible.builtin.dnf:
+        name:
+          - kubectl
+          - terraform
+        state: present
+
+    - name: Install Flatpak packages (Host System)
+      community.general.flatpak:
+        name:
+          - com.obsproject.Studio
+          - org.videolan.VLC
+          - org.tenacityaudio.Tenacity
+          - md.obsidian.Obsidian
+          - org.gimp.GIMP
+          - org.blender.Blender
+        state: present
+        remote: flathub
+        method: user
