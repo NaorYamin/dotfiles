@@ -1,1 +1,19 @@
-~/.ssh
+# Tmux - Plugins and Sessions
+.tmux/plugins/*
+!.tmux/plugins/tpm
+.tmux/resurrect/*
+
+# Ansible & Python
+*.retry
+**/__pycache__/*
+
+# Editor temporaries
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Security (Don't track secrets!)
+*.key
+*.pem
+.env
