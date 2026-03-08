@@ -8,6 +8,8 @@ alias l='toolbox run -c ansible-control luarocks'
 alias fd='toolbox run -c ansible-control fd'
 alias unar='toolbox run -c ansible-control unar'
 alias t='toolbox run -c ansible-control tmux'
+alias ts up work='sudo tailscale up --exit-node=100.103.24.86 --exit-node-allow-lan-access --accept-routes'
+
 
 # Helper to run any one-off command in the toolbox
 alias tb='toolbox run -c ansible-control'
