@@ -1,27 +1,31 @@
-vim.cmd("set expandtab")
-	vim.cmd("set tabstop=2")
-	vim.cmd("set softtabstop=2")
-	vim.cmd("set shiftwidth=2")
-	
-	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-	if not vim.loop.fs_stat(lazypath) then
-	  vim.fn.system({
-	    "git",
-	    "clone",
-	    "--filter=blob:none",
-	    "https://github.com/folke/lazy.nvim.git",
-	    "--branch=stable", -- latest stable release
-	    lazypath,
-	  })
-	end
-	vim.opt.rtp:prepend(lazypath)
-	
-	local plugins = {
-	  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
-	}
-	
-	local opts= {}
-	require("lazy").setup(plugins, opts)
+-- UI and Color Settings
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
 
-	require("catppuccin").setup()
-	vim.cmd.colorscheme "catppuccin"
+-- Indentation Settings
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+
+-- Plugin Manager (lazy.nvim) Path Configuration
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.opt.rtp:prepend(lazypath)
+
+-- Plugin Specification and Setup
+require("lazy").setup({
+  { 
+    "catppuccin/nvim", 
+    name = "catppuccin", 
+    priority = 1000, -- Load this first
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha", -- Mocha is the darkest/richest dark mode
+        transparent_background = false,
+        term_colors = true,
+      })
+      -- Apply the colorscheme
+      vim.cmd.colorscheme "catppuccin"
+    end
+  },
+})

@@ -10,10 +10,14 @@ alias unar='toolbox run -c ansible-control unar'
 alias t='toolbox run -c ansible-control tmux'
 alias ts='sudo tailscale'
 alias c='chezmoi' 
-alias ai='toolbox run -c ansible-control  npx @google/gemini-cli'
+alias cl='toolbox run -c ansible-control claude'
+alias nv='toolbox run -c ansible-control nvim'
 
 # Helper to run any one-off command in the toolbox
 alias tb='toolbox run -c ansible-control'
+
+#git status alias
+alias gs="git status"
 
 #git commit alias
 alias gc="git commit -m"
@@ -52,3 +56,4 @@ fi
 unset rc
 
 eval "$(starship init bash)"
+export PATH=$HOME/.npm-global/bin:$PATH
