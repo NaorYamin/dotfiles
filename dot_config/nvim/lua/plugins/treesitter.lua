@@ -3,11 +3,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      local configs = require("nvim-treesitter.configs")
-      configs.setup({
-        ensure_installed = { "lua", "javascript", "python", "markdown" }, -- Add languages you use
-        highlight = { enable = true }, -- Enable smart highlighting
-        indent = { enable = true },    -- Better indentation
+      local config = require("nvim-treesitter.configs")
+      config.setup({
+        auto_install = true,
+        highlight = { enable = true },
+        indent = { enable = true },
       })
     end
   }
