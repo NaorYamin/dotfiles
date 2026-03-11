@@ -1,31 +1,24 @@
--- UI and Color Settings
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
+-- Set leader key to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Indentation Settings
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+-- Load basic vim options
+require("vim-options")
 
--- Plugin Manager (lazy.nvim) Path Configuration
+-- Bootstrap lazy.nvim (Plugin Manager)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin Specification and Setup
-require("lazy").setup({
-  { 
-    "catppuccin/nvim", 
-    name = "catppuccin", 
-    priority = 1000, -- Load this first
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- Mocha is the darkest/richest dark mode
-        transparent_background = false,
-        term_colors = true,
-      })
-      -- Apply the colorscheme
-      vim.cmd.colorscheme "catppuccin"
-    end
-  },
-})
+-- Setup lazy.nvim and point it to the plugins directory
+-- This will automatically load every .lua file in lua/plugins/
+require("lazy").setup("plugins")
