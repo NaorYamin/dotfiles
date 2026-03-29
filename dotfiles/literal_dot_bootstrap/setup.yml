@@ -1,0 +1,88 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+
+  tasks:
+    - name: Get my user
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+    - name: Add Starship COPR repo
+      ansible.builtin.command: dnf copr enable -y atim/starship
+      args:
+        creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:atim:starship.repo
+
+    - name: Install CLI packages inside Toolbox
+      ansible.builtin.dnf:
+        name:
+          - starship
+          - gh
+          - helm
+          - tmux
+          - luarocks
+          - fd-find
+          - unar
+          - k9s
+        state: present
+
+    - name: Add kubectl repo
+      ansible.builtin.yum_repository:
+        name: Kubernetes
+        description: Kubernetes repo
+        baseurl: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/
+        gpgkey: https://pkgs.k8s.io/core:/stable:/v1.28/rpm/repodata/repomd.xml.key
+        gpgcheck: true
+        enabled: true
+
+    - name: Add Hashicorp Repo
+      ansible.builtin.yum_repository:
+        name: hashicorp
+        description: Hashicorp repo
+        baseurl: "https://rpm.releases.hashicorp.com/fedora/$releasever/$basearch/stable"
+        gpgkey: https://rpm.releases.hashicorp.com/gpg
+        gpgcheck: true
+        enabled: true
+
+    - name: Install kubectl and Terraform
+      ansible.builtin.dnf:
+        name:
+          - kubectl
+          - terraform
+        state: present
+
+    - name: Add K9s COPR repo
+      ansible.builtin.command: dnf copr enable -y isabelcosta/k9s
+      args:
+        creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:isabelcosta:k9s.repo
+
+    - name: Install K9s
+      ansible.builtin.dnf:
+        name: k9s
+        state: present
+
+    - name: Add Lazygit COPR repo
+      ansible.builtin.command: dnf copr enable -y atim/lazygit
+      args:
+        creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:atim:lazygit.repo
+
+    - name: Install Lazygit
+      ansible.builtin.dnf:
+        name: lazygit
+        state: present
+
+    - name: Install Flatpak packages (Host System)
+      ansible.builtin.command:
+        cmd: "flatpak-spawn --host flatpak install -y flathub {{ item }}"
+      loop:
+        - com.obsproject.Studio
+        - org.videolan.VLC
+        - org.tenacityaudio.Tenacity
+        - md.obsidian.Obsidian
+        - org.gimp.GIMP
+        - org.blender.Blender
+      become: false 
+      register: flatpak_result
+      changed_when: "'Installing' in flatpak_result.stdout"
