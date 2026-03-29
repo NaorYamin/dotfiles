@@ -1,4 +1,3 @@
----
 - name: Machine setup
   hosts: localhost
   become: true
@@ -14,6 +13,12 @@
       ansible.builtin.command: dnf copr enable -y atim/starship
       args:
         creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:atim:starship.repo
+
+    - name: Install K9s via RPM
+      ansible.builtin.dnf:
+        name: https://github.com/derailed/k9s/releases/latest/download/k9s_linux_amd64.rpm
+        disable_gpg_check: true
+        state: present
 
     - name: Install CLI packages inside Toolbox
       ansible.builtin.dnf:
@@ -62,6 +67,6 @@
         - md.obsidian.Obsidian
         - org.gimp.GIMP
         - org.blender.Blender
-      become: false  # קריטי: מריץ את הפקודה כמשתמש רגיל כדי שתהיה גישה ל-D-Bus
+      become: false
       register: flatpak_result
       changed_when: "'Installing' in flatpak_result.stdout"

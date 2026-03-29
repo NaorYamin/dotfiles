@@ -1,5 +1,9 @@
 # .bashrc
 
+# Set Neovim as the default editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
 alias k='toolbox run -c ansible-control kubectl'
 alias tf='toolbox run -c ansible-control terraform'
 alias gh='toolbox run -c ansible-control gh'
@@ -12,6 +16,7 @@ alias ts='sudo tailscale'
 alias c='chezmoi' 
 alias cl='toolbox run -c ansible-control claude'
 alias nv='toolbox run -c ansible-control nvim'
+alias k9s='toolbox run -c ansible-control k9s'
 
 # Helper to run any one-off command in the toolbox
 alias tb='toolbox run -c ansible-control'
