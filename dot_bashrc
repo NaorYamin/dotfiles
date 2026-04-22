@@ -17,8 +17,7 @@ alias c='chezmoi'
 alias cl='toolbox run -c ansible-control claude'
 alias nv='toolbox run -c ansible-control nvim'
 alias k9s='toolbox run -c ansible-control k9s'
-alias nmap='toolbox run -c ansible-control nmap'
-alias tree='toolbox run -c ansible-control tree' 
+alias tree='toolbox run -c ansible-control tree'
 # Helper to run any one-off command in the toolbox
 alias tb='toolbox run -c ansible-control'
 
