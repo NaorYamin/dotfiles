@@ -1,0 +1,29 @@
+# --- PART 1: The Git Source ---
+# Defines the source of truth for the cluster configuration
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  secretRef:
+    name: flux-system
+  url: ssh://git@github.com/NaorYamin/homelab
+---
+# --- PART 2: The Main Cluster Sync ---
+# Synchronizes the cluster-specific manifests
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 2m0s
+  path: ./clusters/homelab
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

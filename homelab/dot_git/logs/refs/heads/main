@@ -1,0 +1,40 @@
+0000000000000000000000000000000000000000 bdb3e8a519b25e3ddbbc72e32873787a939bf2e9 NaorYamin <naory902@gmail.com> 1773575701 +0200	clone: from github.com:NaorYamin/homelab.git
+bdb3e8a519b25e3ddbbc72e32873787a939bf2e9 96a643f0416ce709530b876ca7539d6620c1e9f0 NaorYamin <naory902@gmail.com> 1773579091 +0200	pull: Fast-forward
+96a643f0416ce709530b876ca7539d6620c1e9f0 5a27788d1ef0fc93f922e7f8f0c6ff575ffb7e8a NaorYamin <naory902@gmail.com> 1774642879 +0300	commit: added clusters
+5a27788d1ef0fc93f922e7f8f0c6ff575ffb7e8a 03826ab41e1c97ec493562c72cd5a1f7bcc0c9a3 NaorYamin <naory902@gmail.com> 1774643051 +0300	rebase (finish): refs/heads/main onto a08bc9597ecf4c42f12684b7fe3a7a7ce31ba619
+03826ab41e1c97ec493562c72cd5a1f7bcc0c9a3 8c41b94a810f94d55f23d2db2834cff9b8299acd NaorYamin <naory902@gmail.com> 1774798545 +0300	commit: Add Flux sync manifests
+8c41b94a810f94d55f23d2db2834cff9b8299acd cf1a5a9f49d3077be56ceb6234ee3298aa4954f5 NaorYamin <naory902@gmail.com> 1774798970 +0300	commit: fixed tipo and path to the cluster
+cf1a5a9f49d3077be56ceb6234ee3298aa4954f5 632618e0ab7c61584437377efd9b9e79319a213f NaorYamin <naory902@gmail.com> 1774973978 +0300	commit: starting flux from scratch | deleted flux system files
+632618e0ab7c61584437377efd9b9e79319a213f 3ec0b964d3b08aa7dacc27087ddd0564b8777292 NaorYamin <naory902@gmail.com> 1774976751 +0300	commit: added homepage manifest files
+3ec0b964d3b08aa7dacc27087ddd0564b8777292 9662d5d077f9e4ad86fd0e096ef21374cd3a243b NaorYamin <naory902@gmail.com> 1775123685 +0300	pull origin main: Fast-forward
+9662d5d077f9e4ad86fd0e096ef21374cd3a243b 571ed48c06052afb4c23ff5bf908f454fa31eebb NaorYamin <naory902@gmail.com> 1775123820 +0300	commit: added apps.yaml
+571ed48c06052afb4c23ff5bf908f454fa31eebb b8a751fad52b92aa8ed0819d916d4b87ab217d00 NaorYamin <naory902@gmail.com> 1775124159 +0300	commit: fixed the api version of homepage namespace
+b8a751fad52b92aa8ed0819d916d4b87ab217d00 70d711a94680722831f95a9d18f17ea8ade9cf0b NaorYamin <naory902@gmail.com> 1775124505 +0300	commit: fixed deployment file - there was a cpital K of kind and added the namespace to the deployment
+70d711a94680722831f95a9d18f17ea8ade9cf0b 13238962f7cd8f5549edfd0e0f3192136c9efa3d NaorYamin <naory902@gmail.com> 1775125059 +0300	commit: renamed the deployment.yaml to homepage.yaml
+13238962f7cd8f5549edfd0e0f3192136c9efa3d 2a25842d2c7cdcf9c07f7695be68480db093474b NaorYamin <naory902@gmail.com> 1775200111 +0300	commit: added service to the homepage app manifest file
+2a25842d2c7cdcf9c07f7695be68480db093474b 0377492041e34ce2e0bc823c94547da569fd0221 NaorYamin <naory902@gmail.com> 1775200621 +0300	commit: changed the sync of flux interval from 10 minutes to 2 minutes
+0377492041e34ce2e0bc823c94547da569fd0221 06e6bccf0df7ddac5590f4d0474d605542f87874 NaorYamin <naory902@gmail.com> 1775474106 +0300	commit: added cilium load balancer based on layer 2 | added hubble app
+06e6bccf0df7ddac5590f4d0474d605542f87874 4435628edabceac15a5c8b18b12203eca82c97f9 NaorYamin <naory902@gmail.com> 1775474886 +0300	commit: updated got-sync.yaml | added the infrastrcture folder to sync cilium and hubble
+4435628edabceac15a5c8b18b12203eca82c97f9 be094af43eb66be63a95e9ab63e3a50fdbf7c3c2 NaorYamin <naory902@gmail.com> 1775475727 +0300	commit: added kustomization file to the main folder of infrastructure | located helm-release and helm-repo in cilium folder
+be094af43eb66be63a95e9ab63e3a50fdbf7c3c2 111b6ed1e85d58c99ef3834b371004bb253543d9 NaorYamin <naory902@gmail.com> 1775476884 +0300	commit: Populate infrastructure root kustomization
+111b6ed1e85d58c99ef3834b371004bb253543d9 1dda09a55c741cb16eb89b670f777e02e1172529 NaorYamin <naory902@gmail.com> 1775478202 +0300	commit: added levels and depends on in cilium installation to fix and order the installation
+1dda09a55c741cb16eb89b670f777e02e1172529 e89361309238a14a9063bcb581293749c97b1721 NaorYamin <naory902@gmail.com> 1775478661 +0300	commit: removed config files from the kustomization of cilium folder
+e89361309238a14a9063bcb581293749c97b1721 45efd2582536bdf19e0b8bfe1fc0fe4ea4cb9e2b NaorYamin <naory902@gmail.com> 1775479167 +0300	commit: changed the gw api crd
+45efd2582536bdf19e0b8bfe1fc0fe4ea4cb9e2b 4f4a52df9bc2ddfd81fc319f8fa15ca45a7718a9 NaorYamin <naory902@gmail.com> 1775479455 +0300	commit: added metadta name to gateway api crd
+4f4a52df9bc2ddfd81fc319f8fa15ca45a7718a9 09b37e6c298c6e22ccccc2669c9ec2af474f5e19 NaorYamin <naory902@gmail.com> 1775672130 +0300	commit: deleted api gw crd | added repo of api gw in kustomization file as url
+09b37e6c298c6e22ccccc2669c9ec2af474f5e19 461f74d156fb6610c536a7d82fe089dda360df99 NaorYamin <naory902@gmail.com> 1775672838 +0300	commit: added all the cilium files into kustomization and make sure flux knows that this files are a part of the bundle
+461f74d156fb6610c536a7d82fe089dda360df99 a21697cc24bea75b13b0450025e7bfe91ba648c4 NaorYamin <naory902@gmail.com> 1775673160 +0300	commit: removed cilium at all | going to implement traefix and cert manager
+a21697cc24bea75b13b0450025e7bfe91ba648c4 c2ed460788aaa9471fb6b4ecf09e1a2489883b8b NaorYamin <naory902@gmail.com> 1776063172 +0300	commit: added kube-vip as a gitops | added infrastructure.yaml to let flux scan it | added the manifests of kube-vip
+c2ed460788aaa9471fb6b4ecf09e1a2489883b8b 712e0d0d65f26209917dd35bb803458d21c0db81 NaorYamin <naory902@gmail.com> 1776172962 +0300	commit: created infrastructure.yaml file to let flux sync the kube-vip folder | added kube-vip ip pool for future app services | added configmap that includes the ip pool of the kube-vip
+712e0d0d65f26209917dd35bb803458d21c0db81 848614a095f64665b7a764d2963afa33cac23215 NaorYamin <naory902@gmail.com> 1776174119 +0300	commit: removed service from the arg of the daemonset of kube-vip to avoid conflict between the daemonset and the cloud provider | added cloudprovided of kubevip also to the kustomization file
+848614a095f64665b7a764d2963afa33cac23215 c135f489d1d9132f73f1483b48df6379ecf6a984 NaorYamin <naory902@gmail.com> 1776175223 +0300	commit: fixed rbac to enable kube vip cloud provider permissions on the cluster
+c135f489d1d9132f73f1483b48df6379ecf6a984 342bc9ff1d2b1b825b623dad74b28a7c433509f1 NaorYamin <naory902@gmail.com> 1776175557 +0300	commit: added arg to cloud provider manifest to run first kube vip cloud provider
+342bc9ff1d2b1b825b623dad74b28a7c433509f1 e5150a4a49e4e8beca7fc9f0b5b12a0ee9b991d6 NaorYamin <naory902@gmail.com> 1776175822 +0300	commit: removed cloud provider
+e5150a4a49e4e8beca7fc9f0b5b12a0ee9b991d6 c06e592002240616a419f70d08c298ffecb1852b NaorYamin <naory902@gmail.com> 1776458034 +0300	commit: added manifest of cloud controller | added rbac for daemonset
+c06e592002240616a419f70d08c298ffecb1852b 2f20e7a1c655bdfcc7268562626c8390129f1999 NaorYamin <naory902@gmail.com> 1776458953 +0300	commit: fixed cloud controller manifest | fixed the command and the args lines
+2f20e7a1c655bdfcc7268562626c8390129f1999 c7c52d82e2452c16c35eea58869ea37def32b557 NaorYamin <naory902@gmail.com> 1776459279 +0300	commit: fixed the kustomizaition of kube-vip | added kube-vip-cloud-controller.yaml to the list
+c7c52d82e2452c16c35eea58869ea37def32b557 15b9e272c0f458f7c87f0a60d08ede17e2b79ff1 NaorYamin <naory902@gmail.com> 1776459514 +0300	commit: fixed kube vip controller manifest | fix the manifest in the clusterrolebimding part and added the missiong api version
+15b9e272c0f458f7c87f0a60d08ede17e2b79ff1 8c2440b6edb94d0dcba8de9fb89724adcb5764b0 NaorYamin <naory902@gmail.com> 1776460093 +0300	commit: removed args and command from the kube vip conroller
+8c2440b6edb94d0dcba8de9fb89724adcb5764b0 304c300633fed2b77495d0f80ca2f77e546f7986 NaorYamin <naory902@gmail.com> 1776460763 +0300	commit: added role of status services for kube vip controller in its manid=fest
+304c300633fed2b77495d0f80ca2f77e546f7986 d26ef49b40475eb552b6c123bc0181177e1fc5f1 NaorYamin <naory902@gmail.com> 1776461965 +0300	commit: grant permission to kube vip to the emtire cluster just for test
+d26ef49b40475eb552b6c123bc0181177e1fc5f1 627c5d21f60cbd48e60335a0464f972170a34b88 NaorYamin <naory902@gmail.com> 1776463032 +0300	commit: added back the cluster role for kube vip
