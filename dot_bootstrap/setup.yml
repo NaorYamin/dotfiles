@@ -30,6 +30,7 @@
           - luarocks
           - fd-find
           - unar
+          - tree
         state: present
 
     - name: Add kubectl repo
