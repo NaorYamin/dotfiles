@@ -18,6 +18,9 @@ alias cl='toolbox run -c ansible-control claude'
 alias nv='toolbox run -c ansible-control nvim'
 alias k9s='toolbox run -c ansible-control k9s'
 alias tree='toolbox run -c ansible-control tree'
+alias k9s='toolbox run -c ansible-control k9s'
+alias nmap='toolbox run -c ansible-control nmap'
+
 # Helper to run any one-off command in the toolbox
 alias tb='toolbox run -c ansible-control'
 
@@ -62,4 +65,3 @@ unset rc
 
 eval "$(starship init bash)"
 export PATH=$HOME/.npm-global/bin:$PATH
-alias k9s='toolbox run -c ansible-control k9s'
